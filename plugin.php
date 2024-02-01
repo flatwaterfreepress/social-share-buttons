@@ -14,15 +14,33 @@ Author URI: https://hanscompark.com
 // Enqueue plugin assets first 
 function add_plugin_assets() {
 	wp_enqueue_style( 'share_buttons', plugin_dir_url( __FILE__ ) . 'css/share-buttons-style.css', false, '1.0.0' );
-//    wp_enqueue_script( 'copy-scripts', plugin_dir_url( __FILE__ ) . 'js/copy-link.js', '2.5',null, false );
+ //   wp_enqueue_script( 'copy-scripts', plugin_dir_url( __FILE__ ) . 'js/copy-link.js', '2.5',null, false );
 
 }
 add_action('wp_enqueue_scripts', 'add_plugin_assets');
 
+// Replace the Publish this story link withe full share menu - Initially set in functions.php
+if ( ! function_exists( 'chaplin_child_post_meta_append' ) ) :
+	function chaplin_child_post_meta_append( $post_meta, $post_id ) {	
 
+	
+		if ( is_single() && 'post' == get_post_type() ) {
+		
+			?>
+			<li class="share-link meta-wrapper">
+				<span class="meta-text">
+					<a id="share-link">Share</a>
+				</span>
+			</li>
+			<?
+		}
+	}
+	add_action( 'chaplin_end_of_post_meta_list', 'chaplin_child_post_meta_append', 10, 3 );
+endif;
+
+
+// Top of the page share menu
 function add_social_share_buttons($content) {
-	
-	
 	
 	// Get the current page URL
 	$url = esc_url(get_permalink());
@@ -32,24 +50,15 @@ function add_social_share_buttons($content) {
 
 	// Create an array of social networks and their respective sharing URLs
 $social_networks = array(
-		'Copy Link' => 'link:' . $url . '&title=' . $title,
-		'Email' => 'mailto:?subject=Story%20from%20the%20Flatwater%20Free%20Press%20📰' . '&body=From%20the%20Flatwater%20Free%20Press: ' . $url,
 		'Facebook' => 'https://www.facebook.com/sharer/sharer.php?u=' . $url,
 		'X' => 'https://twitter.com/intent/tweet?url=' . $url . '&text=' . $title,
 		'LinkedIn' => 'https://www.linkedin.com/shareArticle?url=' . $url . '&title=' . $title,
+		'Email' => 'mailto:?subject=Story%20from%20the%20Flatwater%20Free%20Press%20📰' . '&body=From%20the%20Flatwater%20Free%20Press: ' . $url,
+		'Copy Link' => 'link:' . $url . '&title=' . $title,
 		'Publish this story' => '',
 	);
 	
 	?>
-	
-	
-	<!-- Add this in functions.php with the Publish link 
-	<li class="share-link meta-wrapper">
-		<span class="meta-text">
-			<a id="share-link">Share</a>
-		</span>
-	</li>
-	-->
 	
 	<script>
 		window.onload = function() {
@@ -112,7 +121,7 @@ $social_networks = array(
 add_filter('the_content', 'add_social_share_buttons', 10, 2);
 
 
-
+// Buttons shown below the story content, above the bylines
 function bottom_share_buttons( ) {
 	
 	// Get the current page URL
@@ -123,15 +132,15 @@ function bottom_share_buttons( ) {
 	
 		// Create an array of social networks and their respective sharing URLs
 	$social_networks = array(
-			'Copy Link' => 'link:' . $url . '&title=' . $title,
-			'Email' => 'mailto:?subject=Story%20from%20the%20Flatwater%20Free%20Press%20📰' . '&body=From%20the%20Flatwater%20Free%20Press: ' . $url,
 			'Facebook' => 'https://www.facebook.com/sharer/sharer.php?u=' . $url,
 			'X' => 'https://twitter.com/intent/tweet?url=' . $url . '&text=' . $title,
 			'LinkedIn' => 'https://www.linkedin.com/shareArticle?url=' . $url . '&title=' . $title,
+			'Copy Link' => 'link:' . $url . '&title=' . $title,
+			'Email' => 'mailto:?subject=Story%20from%20the%20Flatwater%20Free%20Press%20📰' . '&body=From%20the%20Flatwater%20Free%20Press: ' . $url,
 			'Publish this story' => '',
 		);
 		
-	$share_button_row = '<p>Share this story</p><div id="bottom-share-buttons">';
+	$share_button_row = '<div id="bottom-share-buttons">';
 	
 	foreach ($social_networks as $network => $share_url) {
 		if ($network == 'Copy Link'):

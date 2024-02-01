@@ -5,7 +5,7 @@
 	justify-content: center; /* Center the buttons horizontally */
 	margin-top: 20px; /* Add space above the button container */
 	gap: 0; /* Space between each button */
-	border: 1px solid var(--blue-15); 
+	border-top: 5px solid var(--blue-75); 
 	padding: 30px; 
 	background: #fff;
 	width: 100%;
@@ -20,21 +20,22 @@
 
 div.share-buttons {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 20px; 
 	}
 
 #share-link {
 	cursor: pointer;
-	color: var(--dark-blue-60);
 	font-weight: normal;
 }
 
+.post-meta-single-bottom li.share-link { display: none; } /* Hides the share line in the post footer because we're outputting the buttons directly below */
 
-div.share-top { display: flex; flex-direction: row; justify-content: space-between; color: #000; padding: 0 0 0 25px;}
+div.share-top { display: flex; flex-direction: row; justify-items: center; justify-content: space-between; color: #000; padding: 0 0 25px 25px;}
 
-p.share-label { font-weight: bold; font-size: 140%; color: #000;  }
+p.share-label { font-weight: bold; font-size: 140%; color: #000; margin-bottom: 0; }
 
-p#close-button { font-weight: normal; cursor: pointer; }
+p#close-button { font-weight: normal; cursor: pointer; margin-bottom: 0; }
 p#close-button:hover { text-decoration: underline; }
 
 
@@ -45,24 +46,32 @@ p#close-button:hover { text-decoration: underline; }
 	text-decoration: none; /* Remove underline from the links */
 	font-weight: normal;
 	color: #000 !important; 
+	border: 1px solid var(--blue-15);
 }
 
 #bottom-share-buttons {
 	display: flex; 
 	flex-direction: row;
 	align-items: center;
+	column-gap: 20px;
 }
 #bottom-share-buttons a {
 	padding: 15px;
 	text-align: center;
 	color: #000 !important;
+	background: var(--blue-15);
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	text-decoration: none !important;
 }
 
 #bottom-share-buttons a:hover {
-	background: #fff;
+	background: var(--blue);
+	color: #fff !important
 }
 
-.social-share-buttons a:hover, #bottom-share-buttons a {
+.social-share-buttons a:hover {
 	background: #f1f7f9;
 	text-decoration: none !important; 
 }
@@ -73,6 +82,7 @@ a#share-button-copy { cursor: pointer; }
 
 .social-share-buttons a:before {
 	margin-right: 20px; 
+	color: var(--blue);
 }
 
 a[href*="facebook.com"]::before {
@@ -85,10 +95,7 @@ a[href*="mailto"]::before {
   font-family:'Font Awesome 5';
 }
 
-.social-share-buttons a:first-child::before {
-  content:'\f0c1'; /* Link icon */
-  font-family:'Font Awesome 5';
-}
+
 
 a[href*="twitter.com"]::before {
   content: '\e61b';
@@ -116,7 +123,7 @@ a#publish-this-story::before {
 }
 
 #share-link::after {
-  content: '\f14d' !important;
+  content: '\f064' !important;
   font-family: 'Font Awesome 5';
   padding-left: 5px;
   font-weight: 400;
