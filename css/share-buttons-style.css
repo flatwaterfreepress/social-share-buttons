@@ -1,0 +1,130 @@
+/* Container Style */
+.social-share-buttons {
+	display: none; /* hidden to start; "display: flex" when clicked */
+	flex-direction: column;
+	justify-content: center; /* Center the buttons horizontally */
+	margin-top: 20px; /* Add space above the button container */
+	gap: 0; /* Space between each button */
+	border: 1px solid var(--blue-15); 
+	padding: 30px; 
+	background: #fff;
+	width: 100%;
+	position: fixed;
+	z-index: 100;
+	height: auto;
+	top: unset;
+	bottom: 0px;
+	left: 0px;
+	box-shadow: 0 10px 20px hsl(0, 0%, 0%, 25%);
+}
+
+div.share-buttons {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	}
+
+#share-link {
+	cursor: pointer;
+	color: var(--dark-blue-60);
+	font-weight: normal;
+}
+
+
+div.share-top { display: flex; flex-direction: row; justify-content: space-between; color: #000; padding: 0 0 0 25px;}
+
+p.share-label { font-weight: bold; font-size: 140%; color: #000;  }
+
+p#close-button { font-weight: normal; cursor: pointer; }
+p#close-button:hover { text-decoration: underline; }
+
+
+/* Individual Button Styles */
+.social-share-buttons a {
+	font-size: 16px;
+	padding: 15px 25px; /* Button padding */
+	text-decoration: none; /* Remove underline from the links */
+	font-weight: normal;
+	color: #000 !important; 
+}
+
+#bottom-share-buttons {
+	display: flex; 
+	flex-direction: row;
+	align-items: center;
+}
+#bottom-share-buttons a {
+	padding: 15px;
+	text-align: center;
+	color: #000 !important;
+}
+
+#bottom-share-buttons a:hover {
+	background: #fff;
+}
+
+.social-share-buttons a:hover, #bottom-share-buttons a {
+	background: #f1f7f9;
+	text-decoration: none !important; 
+}
+
+a#share-button-copy { cursor: pointer; }
+
+/* Font Awesome characters inserted before link */
+
+.social-share-buttons a:before {
+	margin-right: 20px; 
+}
+
+a[href*="facebook.com"]::before {
+  content:'\f39e';
+  font-family:'Font Awesome 5 Brands';
+}
+
+a[href*="mailto"]::before {
+  content:'\f0e0';
+  font-family:'Font Awesome 5';
+}
+
+.social-share-buttons a:first-child::before {
+  content:'\f0c1'; /* Link icon */
+  font-family:'Font Awesome 5';
+}
+
+a[href*="twitter.com"]::before {
+  content: '\e61b';
+  font-family: 'Font Awesome 6 Brands';
+}
+
+a[href*="linkedin.com"]::before {
+  content: '\f0e1';
+  font-family: 'Font Awesome 5 Brands';
+}
+
+a[href*="instagram.com"]::before {
+  content: '\f16d';
+  font-family: 'Font Awesome 5 Brands';
+}
+
+a#share-button-copy::before {
+  content: '\f0c1';
+  font-family: 'Font Awesome 5';
+}
+
+a#publish-this-story::before {
+  content: '\f1ea';
+  font-family: 'Font Awesome 5';
+}
+
+#share-link::after {
+  content: '\f14d' !important;
+  font-family: 'Font Awesome 5';
+  padding-left: 5px;
+  font-weight: 400;
+}
+
+p#close-button::after {
+	content: '\f00d';
+	font-family: 'Font Awesome 5';
+	color: #000;
+	padding-left: 5px;
+}
