@@ -1,3 +1,5 @@
+<? 
+
 function add_social_share_buttons($content) {
 	
 	
@@ -58,7 +60,6 @@ $social_networks = array(
 		};
 		
 		
-
 	</script>
 		
 	<?

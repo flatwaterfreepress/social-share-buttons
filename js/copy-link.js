@@ -1,7 +1,7 @@
 // Show the hidden container when the link is clicked
 var share_container = document.querySelector('.social-share-buttons');
 
-document.getElementById('#share-link').addEventListener('click', function() {
+document.querySelector('a.share').addEventListener('click', function() {
 	  share_container.style.display = (container.style.display === 'flex') ? 'none' : 'flex';
 });
 
