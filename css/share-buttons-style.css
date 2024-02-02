@@ -1,32 +1,8 @@
-.social-share-buttons {
-	display: none; /* hidden to start; "display: flex" when clicked */
-	flex-direction: column;
-	justify-content: center; /* Center the buttons horizontally */
-	margin-top: 20px; /* Add space above the button container */
-	gap: 0; /* Space between each button */
-	border-top: 5px solid var(--blue-75); 
-	padding: 30px; 
-	background: #fff;
-	width: 100%;
-	position: fixed;
-	z-index: 100;
-	height: auto;
-	top: unset;
-	bottom: 0px;
-	left: 0px;
-	box-shadow: 0 10px 20px hsl(0, 0%, 0%, 25%);
-}
+.social-share-buttons { display: none; flex-direction: column;	justify-content: center; margin-top: 20px; gap: 0; border-top: 5px solid var(--blue-75); padding: 30px; background: #fff; width: 100%; position: fixed; z-index: 100; height: auto; top: unset; bottom: 0px; left: 0px; box-shadow: 0 10px 20px hsl(0, 0%, 0%, 25%); }
 
-div.share-buttons {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: 20px; 
-	}
+div.share-buttons { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
 
-#share-link {
-	cursor: pointer;
-	font-weight: normal;
-}
+#share-link { cursor: pointer; font-weight: normal; }
 
 .post-meta-single-bottom li.share-link { display: none; } /* Hides the share line in the post footer because we're outputting the buttons directly below */
 
@@ -39,6 +15,7 @@ p#close-button:hover { text-decoration: underline; }
 
 
 /* Individual Button Styles */
+
 .social-share-buttons a {
 	font-size: 16px;
 	padding: 15px 25px; /* Button padding */
