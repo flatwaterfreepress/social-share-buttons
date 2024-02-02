@@ -3,8 +3,8 @@
 /*
 
 Plugin Name: Flatwater Social Sharing Buttons
-Description: Simple, junk-free way to get social media share buttons on your article pages.
-Version: 0.2
+Description: A pretty simple, junk-free Wordpress plugin for adding social media network share buttons to the top and bottom of stories on Flatwater Free Press articles.
+Version: 1.0
 Author: Hanscom Park Studio
 Author URI: https://hanscompark.com
 
