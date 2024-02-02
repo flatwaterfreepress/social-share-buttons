@@ -6,7 +6,7 @@ div.share-buttons { display: grid; grid-template-columns: repeat(auto-fit, minma
 
 .post-meta-single-bottom li.share-link { display: none; } /* Hides the share line in the post footer because we're outputting the buttons directly below */
 
-div.share-top { display: flex; flex-direction: row; justify-items: center; justify-content: space-between; color: #000; padding: 0 0 25px 25px;}
+div.share-top { display: flex; flex-direction: row; justify-items: center; justify-content: space-between; color: #000; padding: 0 0 25px 0;}
 
 p.share-label { font-weight: bold; font-size: 140%; color: #000; margin-bottom: 0; }
 
