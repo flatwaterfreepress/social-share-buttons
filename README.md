@@ -8,6 +8,8 @@
 
 **Buttons**: Round buttons are displayed below the story meta data at the bottom of articles.
 
+**Networks**: Facebook, X, LinkedIn are included, plus a 'Copy this link' option, email and link to the story download folder, if that option is enabled.
+
 ### Notes
 
 **Theme-specific**: These are built to work with Flatwater's custom Wordpress theme, a child theme of Chaplin by Anders Noren. You'll see spots where we're hooking into specific Chaplin functions to output the buttons.
