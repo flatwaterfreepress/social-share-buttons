@@ -1,4 +1,3 @@
-/* Container Style */
 .social-share-buttons {
 	display: none; /* hidden to start; "display: flex" when clicked */
 	flex-direction: column;
