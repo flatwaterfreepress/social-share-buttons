@@ -6,7 +6,7 @@ div.share-buttons { display: grid; grid-template-columns: repeat(auto-fit, minma
 
 .post-meta-single-bottom li.share-link { display: none; } /* Hides the share line in the post footer because we're outputting the buttons directly below */
 
-div.share-top { display: flex; flex-direction: row; justify-items: center; justify-content: space-between; color: #000; padding: 0 0 25px 0;}
+div.share-top { display: flex; flex-direction: row; justify-items: center; justify-content: space-between; color: #000; padding: 0 0 25px 25px;}
 
 p.share-label { font-weight: bold; font-size: 140%; color: #000; margin-bottom: 0; }
 
@@ -63,39 +63,39 @@ a#share-button-copy { cursor: pointer; }
 	color: var(--blue);
 }
 
-a[href*="facebook.com"]::before {
+.social-share-buttons a[href*="facebook.com"]::before {
   content:'\f39e';
   font-family:'Font Awesome 5 Brands';
 }
 
-a[href*="mailto"]::before {
+.social-share-buttons a[href*="mailto"]::before {
   content:'\f0e0';
   font-family:'Font Awesome 5';
 }
 
 
 
-a[href*="twitter.com"]::before {
+.social-share-buttons a[href*="twitter.com"]::before {
   content: '\e61b';
   font-family: 'Font Awesome 6 Brands';
 }
 
-a[href*="linkedin.com"]::before {
+.social-share-buttons a[href*="linkedin.com"]::before {
   content: '\f0e1';
   font-family: 'Font Awesome 5 Brands';
 }
 
-a[href*="instagram.com"]::before {
+.social-share-buttons a[href*="instagram.com"]::before {
   content: '\f16d';
   font-family: 'Font Awesome 5 Brands';
 }
 
-a#share-button-copy::before {
+.social-share-buttons a#share-button-copy::before {
   content: '\f0c1';
   font-family: 'Font Awesome 5';
 }
 
-a#publish-this-story::before {
+.social-share-buttons a#publish-this-story::before {
   content: '\f1ea';
   font-family: 'Font Awesome 5';
 }
