@@ -4,7 +4,7 @@
 
 Plugin Name: Flatwater Social Sharing Buttons
 Description: A pretty simple, junk-free Wordpress plugin for adding social media network share buttons to the top and bottom of stories on Flatwater Free Press articles.
-Version: 1.0
+Version: 1.1
 Author: Hanscom Park Studio
 Author URI: https://hanscompark.com
 
@@ -14,7 +14,7 @@ Author URI: https://hanscompark.com
 // Enqueue plugin assets first 
 function add_plugin_assets() {
 	wp_enqueue_style( 'share_buttons', plugin_dir_url( __FILE__ ) . 'css/share-buttons-style.css', false, '1.0.0' );
- //   wp_enqueue_script( 'copy-scripts', plugin_dir_url( __FILE__ ) . 'js/copy-link.js', '2.5',null, false );
+	wp_enqueue_script( 'copy-scripts', plugin_dir_url( __FILE__ ) . 'js/share-button-scripts.js', '1.0.0', null,  false );
 
 }
 add_action('wp_enqueue_scripts', 'add_plugin_assets');
@@ -56,42 +56,6 @@ function add_social_share_buttons($content) {
 		'Email' => 'mailto:?subject=Story%20from%20the%20Flatwater%20Free%20Press%20📰' . '&body=From%20the%20Flatwater%20Free%20Press: ' . $url,
 		'Copy Link' => 'link:' . $url . '&title=' . $title,
 		);
-
-	
-	?>
-	
-	
-	<script>
-		window.onload = function() {
-			console.log("Loading...");
-			var share_container = document.querySelector('.social-share-buttons');
-			console.log("share_container: ", share_container);
-			document.getElementById('share-link').addEventListener('click', function() {
-				  share_container.style.display = (share_container.style.display === 'flex') ? 'none' : 'flex';
-			});
-
-			document.getElementById('close-button').addEventListener('click', function() {
-				  share_container.style.display = 'none';
-			});
-		}
-	</script>
-	
-	
-	<script type="text/javascript">
-		function CopyLink() {
-			let url = document.location.href
-			
-			navigator.clipboard.writeText(url).then(function() {
-				console.log('Copied link: ', url);
-				document.getElementById('share-button-copy').innerHTML = "Link copied";
-
-			}, function() {
-				console.log('Copy error');
-			});
-		};
-	</script>
-		
-	<?
 	
 	$share_buttons = '<div class="social-share-buttons"><div class="share-top"><p class="share-label">Share this story</p><p  id="close-button">Close</p></div><div class="share-buttons">';
 
