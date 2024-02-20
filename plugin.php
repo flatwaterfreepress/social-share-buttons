@@ -13,7 +13,7 @@ Author URI: https://hanscompark.com
 
 // Enqueue plugin assets first 
 function add_plugin_assets() {
-	wp_enqueue_style( 'share_buttons', plugin_dir_url( __FILE__ ) . 'css/share-buttons-style.css', false, '1.0.0' );
+	wp_enqueue_style( 'share_buttons', plugin_dir_url( __FILE__ ) . 'css/share-buttons-style.css', false, '1.1.0' );
 	wp_enqueue_script( 'copy-scripts', plugin_dir_url( __FILE__ ) . 'js/share-button-scripts.js', '1.0.0', null,  false );
 
 }
@@ -93,6 +93,8 @@ add_filter('the_content', 'add_social_share_buttons', 10, 2);
 // Buttons shown below the story content, above the bylines
 function bottom_share_buttons( ) {
 	
+	if( is_single() ) {
+	
 	// Set the variables
 	
 	// Get the current page URL
@@ -135,6 +137,7 @@ function bottom_share_buttons( ) {
 	
 	
 	echo $share_button_row;
+	}
 }
 add_action( 'chaplin_entry_footer', 'bottom_share_buttons', 19 );
 
