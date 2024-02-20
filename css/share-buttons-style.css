@@ -63,39 +63,39 @@ a#share-button-copy { cursor: pointer; }
 	color: var(--blue);
 }
 
-.social-share-buttons a[href*="facebook.com"]::before {
+.social-share-buttons a[href*="facebook.com"]::before, #bottom-share-buttons a[href*="facebook.com"]::before {
   content:'\f39e';
   font-family:'Font Awesome 5 Brands';
 }
 
-.social-share-buttons a[href*="mailto"]::before {
+.social-share-buttons a[href*="mailto"]::before, #bottom-share-buttons a[href*="mailto"]::before {
   content:'\f0e0';
   font-family:'Font Awesome 5';
 }
 
 
 
-.social-share-buttons a[href*="twitter.com"]::before {
+.social-share-buttons a[href*="twitter.com"]::before, #bottom-share-buttons a[href*="twitter.com"]::before {
   content: '\e61b';
   font-family: 'Font Awesome 6 Brands';
 }
 
-.social-share-buttons a[href*="linkedin.com"]::before {
+.social-share-buttons a[href*="linkedin.com"]::before, #bottom-share-buttons a[href*="linkedin.com"]::before {
   content: '\f0e1';
   font-family: 'Font Awesome 5 Brands';
 }
 
-.social-share-buttons a[href*="instagram.com"]::before {
+.social-share-buttons a[href*="instagram.com"]::before, #bottom-share-buttons a[href*="instagram.com"]::before {
   content: '\f16d';
   font-family: 'Font Awesome 5 Brands';
 }
 
-.social-share-buttons a#share-button-copy::before {
+.social-share-buttons a#share-button-copy::before, #bottom-share-buttons a#share-button-copy::before {
   content: '\f0c1';
   font-family: 'Font Awesome 5';
 }
 
-.social-share-buttons a#publish-this-story::before {
+.social-share-buttons a#publish-this-story::before, #bottom-share-buttons a#publish-this-story::before {
   content: '\f1ea';
   font-family: 'Font Awesome 5';
 }
